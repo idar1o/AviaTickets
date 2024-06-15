@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/passengersFragment"
+        android:name="com.example.myappavia.presentation.screens.passenger.PassengersFragment"
+        android:label="fragment_passengers"
+        tools:layout="@layout/fragment_passengers" >
+        <action
+            android:id="@+id/action_passengersFragment_to_detailPassengersFragment"
+            app:destination="@id/detailPassengersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.myappavia.presentation.screens.orderscreen.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_ordersFragment_to_detailOrderFragment"
+            app:destination="@id/detailOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.myappavia.presentation.screens.searchscreen.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_ticketsFoundFragment"
+            app:destination="@id/ticketsFoundFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketsFoundFragment"
+        android:name="com.example.myappavia.presentation.screens.ticketsfoundscreen.TicketsFoundFragment"
+        android:label="fragment_tickets_found"
+        tools:layout="@layout/fragment_tickets_found" >
+        <action
+            android:id="@+id/action_ticketsFoundFragment_to_flightDetailFragment"
+            app:destination="@id/flightDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightDetailFragment"
+        android:name="com.example.myappavia.presentation.screens.flightdetailscreen.FlightDetailFragment"
+        android:label="fragment_flight_detail"
+        tools:layout="@layout/fragment_flight_detail" >
+        <action
+            android:id="@+id/action_flightDetailFragment_to_dataVerificationFragment"
+            app:destination="@id/dataVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataVerificationFragment"
+        android:name="com.example.myappavia.presentation.screens.dataverificationscreen.DataVerificationFragment"
+        android:label="fragment_data_verification"
+        tools:layout="@layout/fragment_data_verification" >
+        <action
+            android:id="@+id/action_dataVerificationFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.myappavia.presentation.screens.paymentscreen.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailOrderFragment"
+        android:name="com.example.myappavia.presentation.screens.orderscreen.DetailOrderFragment"
+        android:label="fragment_detail_order"
+        tools:layout="@layout/fragment_detail_order" />
+    <fragment
+        android:id="@+id/detailPassengersFragment"
+        android:name="com.example.myappavia.presentation.screens.passenger.DetailPassengersFragment"
+        android:label="fragment_detail_passengers"
+        tools:layout="@layout/fragment_detail_passengers" />
+</navigation>

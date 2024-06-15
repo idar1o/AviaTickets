@@ -1,0 +1,172 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 5,
+    "identityHash": "4523090757bc2d00cde9b3525af72a3e",
+    "entities": [
+      {
+        "tableName": "passengers",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`PassID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `Lastname` TEXT, `number` TEXT, `email` TEXT, `sex` TEXT, `docs` TEXT, `number_docs` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "PassID",
+            "columnName": "PassID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Lastname",
+            "columnName": "Lastname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "number",
+            "columnName": "number",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sex",
+            "columnName": "sex",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "docs",
+            "columnName": "docs",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "number_docs",
+            "columnName": "number_docs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "PassID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tickets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `origin` TEXT, `destination` TEXT, `departure_at` TEXT, `finish_time` TEXT, `price` TEXT, `passengers_count` INTEGER NOT NULL, `PassID` INTEGER NOT NULL, `transfers` TEXT, `return_ticket` INTEGER, FOREIGN KEY(`PassID`) REFERENCES `passengers`(`PassID`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "origin",
+            "columnName": "origin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination",
+            "columnName": "destination",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "departure_at",
+            "columnName": "departure_at",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "finish_time",
+            "columnName": "finish_time",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "passengers_count",
+            "columnName": "passengers_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "PassID",
+            "columnName": "PassID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transfers",
+            "columnName": "transfers",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "return_ticket",
+            "columnName": "return_ticket",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_tickets_PassID",
+            "unique": false,
+            "columnNames": [
+              "PassID"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tickets_PassID` ON `${TABLE_NAME}` (`PassID`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "passengers",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "PassID"
+            ],
+            "referencedColumns": [
+              "PassID"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4523090757bc2d00cde9b3525af72a3e')"
+    ]
+  }
+}

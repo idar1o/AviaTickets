@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+
+    tools:context=".presentation.screens.searchscreen.SearchFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/_590132398_4"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/otkudabt"
+
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Откуда"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@color/edittextsColor"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/kudabt"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+
+        android:text="Куда"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@color/edittextsColor"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/otkudabt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/otkudabt"
+        app:layout_constraintTop_toBottomOf="@+id/otkudabt" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/searchBtn"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="68dp"
+        android:text="Найти Билеты"
+
+        app:strokeColor="@color/purple_200"
+        app:backgroundTint="#0B25A8"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/passenger_bnt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passenger_bnt"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/passenger_bnt"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:text="Пассажиры"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@color/edittextsColor"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/kudabt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/kudabt"
+        app:layout_constraintTop_toBottomOf="@+id/kudabt">
+
+
+        <Button
+            android:id="@+id/tuda_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+
+            android:text="Туда"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/edittextsColor"
+
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/obratno_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="ОБратно"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="@color/edittextsColor"
+            app:cornerRadius="15dp"
+            app:icon="@drawable/ic_baseline_close_24"
+            app:iconGravity="end" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/stat_notify_sync"
+        app:layout_constraintBottom_toBottomOf="@+id/kudabt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/otkudabt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
